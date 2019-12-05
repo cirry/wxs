@@ -1,0 +1,19 @@
+/* pages/wxssStudy/wxssStudy.wxss 
+1 小程序之中不需要像web哪样用link来引入标签
+2 利用calc属性 css和wcss都支持的属性可以计算宽度
+  注意两边和数值与单位之间不要留空格，利用此属性可以方便适配
+  calc(750rpx*100/375)
+3 存在一个设计稿 宽度为414 或者未知宽度，设为page
+  1 设计稿 page 存在一个元素 宽度为100px
+  2 拿以上的需求去实现 不同宽度的页面适配
+   page px = 750 rpx
+   1 px = 2 rpx
+   100px = 750 rpx * 100 / page
+*/
+
+view{
+  width: calc(750rpx*100/375);
+  height: 200rpx;
+  font-size: 40rpx;
+  background-color: aqua;
+}
