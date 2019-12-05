@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/image/image",
+    "pages/search/search",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "我的应用",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true ,
+    "backgroundColor": "yellow"  
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
