@@ -1,0 +1,90 @@
+<!--pages/demo2/demo2.wxml-->
+<!-- 
+  1. text标签相当于html中的span标签，不会换行
+  2. view标签相当于div标签，会换行
+
+ -->
+<text>page</text><text>123456</text>
+
+<view>123</view>
+<view>123</view>
+
+<text>{{msg}}</text>
+
+<view>{{'1'+'1'}}</view>
+<text>{{1+2+2}}</text>
+
+<view>{{num%2==0?'偶数':'奇数'}}</view>
+<!-- 列表循环样例 
+1.wx:for="{{数组或对象}}" wx:for-item="循环项的名称" wx:for-index="循环项的索引"
+2.wx:key ="唯一的值" 用来提高列表渲染的性能
+  wx:key 绑定一个普通的字符串的时候，那么这个字符串名称肯定是循环数组对象中的唯一属性
+  wx:key ="*this" 就表示你的数组是一个普通的数组，*this表示循环项，例如像这样的数组:[1,2,3,4]
+
+3.当出现了数组的嵌套循环的时候，要绑定的名字不能重名
+4.默认情况我们不写 wx:for-item="item" wx:for-index="index"，小程序也会默认为item和index
+  如果只有一层代码的话，这些代码可以省略
+-->
+<!-- <view>
+  <view wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+    我的名字是：{{item.name}}----我的序号是：{{index}}
+  </view>
+</view> -->
+
+<view>
+  <view wx:for="{{list}}" wx:key="id">
+    我的名字是：{{item.name}}----我的序号是：{{index}}
+  </view>
+</view>
+
+<!-- 循环对象
+  1.wx:for="{{对象}}" wx:for-item="对象的值" wx:for-index="对象的属性"
+  2.循环对象的时候最好把item和index的名称都修改一下，跟循环列表的不同
+    wx:for-item="value" wx:for-index="key"
+
+ -->
+<view>
+  <view
+    wx:for="{{person}}"
+    wx:for-item="value" wx:for-index="key"
+    wx:key="*this"
+  >
+  属性：{{key}} ---- 值：{{value}}
+  </view>
+</view> 
+
+<!-- block标签
+  1 占位符的标签
+  2 写代码的时候，可以看到标签的存在
+  3 页面渲染，小程序会把它移除掉
+ -->
+
+ <!-- <view>
+  <block
+    wx:for="{{person}}"
+    wx:for-item="value" wx:for-index="key"
+    wx:key="*this"
+  >
+  属性：{{key}} ---- 值：{{value}}
+  </block>
+</view>  -->
+
+
+<!-- 条件渲染
+  1 wx:if ="{{true/false}}"
+  2 wx:if, wx:elif, wx:else
+ -->
+
+<!-- <view>
+<view>条件渲染</view>
+<view wx:if="{{false}}">1</view>
+<view wx:elif="{{false}}">2</view>
+<view wx:else="{{true}}">3</view>
+</view> -->
+
+<!-- hidden -->
+<!-- 1 在标签上直接加入hidden属性
+     2 hidden属性不能和display方式放一起使用，因为hidden就是display:none,可能会被覆盖样式
+ -->
+
+<view hidden="true">-----hidden-----</view>
