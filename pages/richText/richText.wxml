@@ -1,0 +1,7 @@
+<!-- 
+  富文本渲染方式有两种
+  1 是直接给html代码，字符串方式
+  2 是js中的实例方式
+ -->
+
+<rich-text nodes="{{html}}"></rich-text>

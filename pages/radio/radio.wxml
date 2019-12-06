@@ -1,0 +1,10 @@
+<!-- 
+单选框 radio
+1 单选框radio 都需要跟radio-group放一起使用
+ -->
+<radio-group bindchange="handleChange">
+<radio color="red" value="female">女</radio>
+<radio color="red" value="male">男</radio>
+</radio-group>
+
+<view>您选择的性别是：{{gender}}</view>
