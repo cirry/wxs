@@ -16,8 +16,17 @@ Page({
     }, {
       id: 2,
       name: '我的',
-      isActivate: false
+      isActive: false
     }]
+  },
+  //自定义事件，用来接收子组件传递来的数据
+  handleItemChange(e){
+    // 接收传递过来的参数
+    const {index} = e.detail;
+    let {tabs} = this.data;
+
+    tabs.forEach((item, idx) => idx === index?item.isActive=true:item.isActive=false);
+    this.setData({tabs});
   },
 
   /**
